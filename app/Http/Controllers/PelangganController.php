@@ -54,17 +54,28 @@ class PelangganController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pelanggan $pelanggan)
     {
-        //
+        return view('pelanggans.edit', compact('pelanggan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Pelanggan $pelanggan)
     {
-        //
+        $data = $request->validate([
+            'kode_pelanggan' => 'required|unique:pelanggans,kode_pelanggan,' . $pelanggan->id,
+            'nama' => 'required',
+            'kategori' => 'required',
+            'email' => 'required|email',
+            'tanggal_daftar' => 'required|date',
+            'alamat' => 'required',
+            'keterangan' => 'nullable',
+        ]);
+
+        $pelanggan->update($data);
+        return redirect()->route('pelanggans.index')->with('success', 'Pelanggan berhasil diperbarui.');
     }
 
     /**
