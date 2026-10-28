@@ -1,6 +1,6 @@
 <h1>Tambah Pelanggan</h1>
 
-<form action="{{ route}}('pelanggans.store') }}" method="POST">
+<form action="{{ route('pelanggans.store') }}" method="POST">
     @csrf
     <p><label for="kode_pelanggan">Kode Pelanggan:</label>
     <input type="text" name="kode_pelanggan" id="kode_pelanggan" required>
@@ -33,5 +33,5 @@
 
     <button type="submit">Simpan</button>
 
-    <a href="{{ route('pelanggans.index') }}">Kembali</a>
+  <button><a href="{{ route('pelanggans.index') }}">Kembali</a></button>
 </form>

@@ -27,10 +27,10 @@
     <input type="email" name="email" id="email" value="{{ $pelanggan->email }}" required>
     </p>
 
-    <p>
-    <label for="tanggal_daftar">Tanggal Daftar:</label>
+    <p> <label for="tanggal_daftar">Tanggal Daftar:</label>
     <input type="date" name="tanggal_daftar" id="tanggal_daftar" value="{{ $pelanggan->tanggal_daftar }}" required>
     </p>
+
 
     <p>
     <label for="alamat">Alamat:</label>
@@ -43,5 +43,5 @@
     </p>
 
     <button type="submit">Simpan Perubahan</button>
-    <a href="{{ route('pelanggans.index') }}">Kembali</a>
+    <button><a href="{{ route('pelanggans.index') }}">Kembali</a></button>
 </form>

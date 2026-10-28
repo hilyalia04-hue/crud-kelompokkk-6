@@ -26,6 +26,13 @@
             <td>{{ $pelanggan->tanggal_daftar }}</td>
             <td>{{ $pelanggan->alamat }}</td>
             <td>{{ $pelanggan->keterangan }}</td>
+            <td> <a href="{{ route('pelanggans.edit', $pelanggan->id) }}" class="btn btn-warning">Edit</a>
+            <form action="{{ route('pelanggans.destroy', $pelanggan->id) }}" method="POST" style="display: inline-block;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus pelanggan ini?')">Hapus</button>
+            </form>
+        </td>
         </tr>
         @empty
         <tr>

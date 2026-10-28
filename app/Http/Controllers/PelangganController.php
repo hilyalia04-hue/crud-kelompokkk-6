@@ -81,8 +81,9 @@ class PelangganController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Pelanggan $pelanggan)
     {
-        //
+        $pelanggan->delete();
+        return redirect()->route('pelanggans.index')->with('success', 'Pelanggan berhasil dihapus.');
     }
 }
