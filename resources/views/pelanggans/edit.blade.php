@@ -45,3 +45,7 @@
     <button type="submit">Simpan Perubahan</button>
     <button><a href="{{ route('pelanggans.index') }}">Kembali</a></button>
 </form>
+
+<style>
+    .btn
+</style>

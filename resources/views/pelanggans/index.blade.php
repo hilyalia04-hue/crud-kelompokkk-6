@@ -36,8 +36,12 @@
         </tr>
         @empty
         <tr>
-             <td colspan="8">Tidak ada data pelanggan.</td>
+             <td colspan="8">
+                Tidak ada data pelanggan.
+             </td>
         </tr>
         @endforelse
     </tbody>
 </table>
+
+
