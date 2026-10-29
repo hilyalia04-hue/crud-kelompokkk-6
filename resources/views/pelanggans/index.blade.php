@@ -1,4 +1,10 @@
 <h1>Daftar Pelanggan</h1>
+
+@if (session('success'))
+    <div style="color: green; font-weight: bold;">
+        {{ session('success') }}
+    </div>
+@endif
 <p>
     <a href="{{ route('pelanggans.create') }}" class="btn btn-primary">Tambah Pelanggan</a>
 </p>
